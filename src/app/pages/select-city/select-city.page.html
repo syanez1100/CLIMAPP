@@ -1,0 +1,28 @@
+
+<ion-header  class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-searchbar #searchbar style="margin-top: 10px;" (ionChange)="searchCities($event)" placeholder="Ingrese su ciudad" class="ion-padding"></ion-searchbar>
+    </ion-buttons>
+    <div>
+    </div>
+    <ion-buttons style="margin-top: 10px;" slot="primary">
+      <ion-button routerLink="/cities"> Cancelar </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div *ngIf="cities.length === 0" class="chip-container">
+    <ion-chip *ngFor="let city of principalCities" (click)="filterCities(city)" color="primary">{{city}}</ion-chip>
+  </div>
+  <div>
+  </div>
+  <div>
+    <ion-list>
+      <ion-item *ngFor="let city of cities" (click)="addCity(city)">
+        <ion-label>{{city.place_name}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
