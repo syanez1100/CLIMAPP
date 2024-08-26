@@ -1,0 +1,35 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/home" default-href="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Administrar ciudades</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshCities($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div>
+    <ion-searchbar (ionFocus)="searchingCity()" placeholder="Ingrese su ciudad" class="ion-padding"></ion-searchbar>
+  </div>
+
+  <ion-text *ngIf="cities.length < 1">
+    <h2 style="text-align: center;">No hay se ha seleccionado ninguna ciudad.</h2>
+  </ion-text>
+
+  <div>
+    <ion-list lines="none">
+      <ion-item *ngFor="let city of cities" (click)="presentActionSheet(city)">
+        <ion-card style="width: 100%;" color="secondary">
+          <ion-card-header>
+            <ion-card-title>{{city.name_complete}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
+

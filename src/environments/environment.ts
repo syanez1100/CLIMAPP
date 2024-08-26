@@ -1,16 +1,7 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  production: false,
+  urlMapBox: 'https://api.mapbox.com/geocoding/v5/mapbox.places/{city}.json?access_token={apiKey}&types=place',
+  apiKeyMapBox: 'pk.eyJ1Ijoic3lhbmV6IiwiYSI6ImNrenFkbXg4NDB5Y2IycXM4cG5zMWQ1czAifQ.r6CbffU4GNNfcVOQvX6XJg',
+  urlOpenWeather: 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&lang=es&appid={apiKey}',
+  apiKeyOpenWeather: 'f6b08da24ca33b3608805639b3a92290',
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

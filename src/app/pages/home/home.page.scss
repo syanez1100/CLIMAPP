@@ -1,0 +1,137 @@
+.container-clime {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.container-temperature {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.title-temperature {
+  color: white;
+  font-size: 100px;
+  line-height: 1;
+}
+
+.measure {
+  color: white;
+  font-size: 40px;
+  align-self: flex-start;
+  position: relative;
+  top: 5px; /* Ajusta este valor según sea necesario */
+}
+
+.card-data{
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+}
+
+.item-data{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  h3{
+    font-size: 12px;
+  }
+}
+
+// ion-content.custom-background {
+//   --background: url('https://i.pinimg.com/originals/73/94/e0/7394e05d81a884d870a7304d1138cd6b.gif') no-repeat bottom / cover !important;
+// }
+
+ion-toolbar {
+  --background: transparent;
+  --color: white;
+}
+
+ion-list{
+  background: transparent;
+}
+ion-item{
+  --background: transparent;
+}
+ion-label{
+  --background: transparent;
+}
+
+
+.compass-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: transparent;
+}
+
+.compass {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.compass-needle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.compass-icon {
+  font-size: 25px;
+  transition: transform 0.5s ease; /* Opcional, para suavizar la rotación */
+}
+.compass-direction {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.direction {
+  position: absolute;
+  font-weight: bold;
+  color: #fff;
+}
+
+.north {
+  color: #fff;
+  top: 10px;
+  font-size: 10px;
+}
+
+.east {
+  color: #fff;
+  right: 10px;
+  font-size: 10px;
+}
+
+.south {
+  color: #fff;
+  bottom: 10px;
+  font-size: 10px;
+}
+
+.west {
+  color: #fff;
+  left: 10px;
+  font-size: 10px;
+}
+
+swiper-container{
+  --swiper-pagination-color: white;
+  --swiper-pagination-bottom: 95%;
+}

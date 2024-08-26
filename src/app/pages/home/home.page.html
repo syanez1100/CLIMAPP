@@ -1,0 +1,130 @@
+<ion-content [fullscreen]="true" class="ion-padding container custom-background" [attr.style]="backgroundStyle" >
+
+  <ion-header mode="ios" [translucent]="false" class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon routerLink="/cities" style="font-size: 25px;" name="add-outline"></ion-icon>
+      </ion-buttons>
+      <ion-title>{{cityActive.name}}</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon style="font-size: 25px;" id="click-trigger" name="ellipsis-vertical-outline"></ion-icon>
+        <ion-popover trigger="click-trigger" triggerAction="click">
+          <ng-template>
+            <p class="ion-padding" (click)="openModal()">licencias</p>
+            <p class="ion-padding" (click)="resetDb()">Restablecer</p>
+          </ng-template>
+        </ion-popover>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-refresher slot="fixed" (ionRefresh)="refreshCities($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-text color="light" *ngIf="cities.length < 1">
+    <h1 style="text-align: center;">No hay se ha seleccionado ninguna ciudad.</h1>
+  </ion-text>
+
+  <swiper-container pagination="true" (swiperslidechange)="changeSlide($event)">
+    <swiper-slide *ngFor="let city of cities" >
+      <div class="container-clime">
+        <div class="container-temperature">
+          <h1 class="title-temperature">{{climateCityActive?.main?.temp}}</h1>
+          <h1 class="measure">°C</h1>
+        </div>
+        <ion-chip color="light">
+          <ion-icon name="leaf-outline"></ion-icon>
+          <ion-label>{{climateCityActive?.main?.humidity}}%</ion-label>
+        </ion-chip>
+        <ion-text color="light">
+          <h4 style="padding: 0px;margin: 0px;text-transform: capitalize;">{{climateCityActive?.weather?.[0]?.description}}</h4>
+        </ion-text>
+        <ion-avatar style="margin: auto;">
+          <img alt="icon" [src]="'https://openweathermap.org/img/wn/'+ climateCityActive?.weather?.[0]?.icon + '@2x.png'" />
+        </ion-avatar>
+      </div>
+
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col style="padding: 0px;margin: 2px;">
+              <ion-row>
+                <ion-col style="padding: 0px;" class="card-data">
+                  <div class="ion-padding">
+                    <div class="compass-container">
+                      <div class="compass">
+                        <div class="compass-needle" [ngStyle]="{'transform': 'rotate(' + climateCityActive?.wind?.deg  + 'deg)'}">
+                          <ion-icon color="light" name="arrow-up-outline" class="compass-icon"></ion-icon>
+                        </div>
+                        <div class="compass-direction">
+                          <div class="direction north">N</div>
+                          <div class="direction east">E</div>
+                          <div class="direction south">S</div>
+                          <div class="direction west">W</div>
+                        </div>
+                      </div>
+                    </div>
+                    <ion-text color="light" style="margin-top: 5px;">
+                      <h2 style="padding: 0px;margin: 0px;">{{climateCityActive?.wind?.deg}}°</h2>
+                      <h4 style="padding: 0px;margin: 0px;">{{climateCityActive?.wind?.speed}} m/s</h4>
+                    </ion-text>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col style="padding: 0px;margin: 2px;" class="card-data">
+              <div style="padding: 5px;">
+                <ion-list>
+                  <ion-item>
+                    <ion-label color="light">
+                      <div class="item-data">
+                        <h3>Humedad</h3>
+                        <ion-text color="light">
+                          <h4>78%</h4>
+                        </ion-text>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label color="light">
+                      <div class="item-data">
+                        <h3>Sensacion real</h3>
+                        <ion-text color="light">
+                          <h4>31°</h4>
+                        </ion-text>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label color="light">
+                      <div class="item-data">
+                        <h3>Presión</h3>
+                        <ion-text color="light">
+                          <h4>{{climateCityActive?.main?.pressure}} mbar</h4>
+                        </ion-text>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label color="light">
+                      <div class="item-data">
+                        <h3>Nubosidad</h3>
+                        <ion-text color="light">
+                          <h4>36%</h4>
+                        </ion-text>
+                      </div>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+
+
+</ion-content>
