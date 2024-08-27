@@ -16,8 +16,10 @@ CLIMAPP es una aplicación de clima construida con **Ionic** y **Angular**. Esta
  - **Mapbox** Plataforma de mapas y visualización geográfica interactiva.
 
 ## 📱 Capturas de Pantalla
-![image](https://github.com/user-attachments/assets/47c6da82-be59-4bd4-9232-2a96fc740d37)
-![image](https://github.com/user-attachments/assets/87c8df12-148d-4966-b7a8-fe57e0a92d9e)
+<div style="display: flex; justify-content:center">
+  <img src="https://github.com/user-attachments/assets/47c6da82-be59-4bd4-9232-2a96fc740d37" alt="image" width="300"/>
+  <img src="https://github.com/user-attachments/assets/87c8df12-148d-4966-b7a8-fe57e0a92d9e" alt="image" width="300"/>
+</div>
 
 ## 🛠️ Instalación
 Sigue estos pasos para instalar y ejecutar CLIMAPP en tu entorno local:
@@ -31,11 +33,9 @@ Instala las dependencias:
 
      npm install
 
-Configura las APIs de OpenWeather y Mapbox:**
+Configura las APIs de OpenWeather y Mapbox:
 
 -   Regístrate en [OpenWeather](https://openweathermap.org/) y [Mapbox](https://www.mapbox.com/) para obtener sus respectivas claves API.
-
-Regístrate en OpenWeatherMap para obtener una clave API.
 
 Ejecuta la aplicación:
 
